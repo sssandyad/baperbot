@@ -1,4 +1,4 @@
-application: baperbot-1373 
+application: baperbot-testing
 version: 1
 runtime: python27
 api_version: 1
