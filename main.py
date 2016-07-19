@@ -84,7 +84,10 @@ class WebhookHandler(webapp2.RequestHandler):
             message = body['edited_message']
         message_id = message.get('message_id')
         date = message.get('date')
-        text = message.get('text').lower()
+        try:
+            text = message.get('text').lower()
+        except:
+            text = message.get('text')
         fr = message.get('from')
         chat = message['chat']
         chat_id = chat['id']
@@ -469,7 +472,7 @@ _ask = {
     'baperbot_ejek': ('gileh','gila','longor','jelek','kasar','kejam','gendeng','nakal','rosak','gaplek','kampret','geblek','gatel'),
     'baperbot_positif': ('lucu','imut','hebat','baik','ramah','manis','keren'),
     'baperbot_pagi': ('pagi','morning'),
-    'baper': (_emot_angry_face,_emot_pouting_face,_emot_unamused_face,'dicuekin','jahat','sedih',_emot_loudly_crying_face,_emot_pensive_face,'dikacangin','tauk','pelit','T.T','T_T','-_-'),
+    'baper': (_emot_angry_face,_emot_pouting_face,_emot_unamused_face,'dicuekin','jahat','sedih',_emot_loudly_crying_face,_emot_pensive_face,'dikacangin','tauk','pelit','T.T','T_T','-_-','!!'),
     'tertawa': (_emot_face_with_tears_of_joy,'wkwk','haha'),
     'tanya': ('?',),
     'pacar': ('raisa', 'tatjana', 'dian', 'asmiranda','luna','maya','rani')
